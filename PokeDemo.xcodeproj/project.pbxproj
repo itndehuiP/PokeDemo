@@ -34,6 +34,11 @@
 		62121FCF24FEC30E00B6C784 /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FCE24FEC30E00B6C784 /* StoryboardIdentifiable.swift */; };
 		62121FD124FEC59E00B6C784 /* NavigationBarSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FD024FEC59E00B6C784 /* NavigationBarSettable.swift */; };
 		62121FD324FEC5FA00B6C784 /* NavigationBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FD224FEC5FA00B6C784 /* NavigationBarItem.swift */; };
+		62121FD524FED4BC00B6C784 /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FD424FED4BC00B6C784 /* NavigationCoordinator.swift */; };
+		62121FD724FED61600B6C784 /* NavigationController+Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FD624FED61600B6C784 /* NavigationController+Navigable.swift */; };
+		62121FD924FED65900B6C784 /* NavigationController+NavBarSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FD824FED65900B6C784 /* NavigationController+NavBarSettable.swift */; };
+		62121FDD24FED8AB00B6C784 /* NavigationCoordinator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62121FDC24FED8AB00B6C784 /* NavigationCoordinator.storyboard */; };
+		62121FE024FEDF4E00B6C784 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FDF24FEDF4E00B6C784 /* Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +83,11 @@
 		62121FCE24FEC30E00B6C784 /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
 		62121FD024FEC59E00B6C784 /* NavigationBarSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarSettable.swift; sourceTree = "<group>"; };
 		62121FD224FEC5FA00B6C784 /* NavigationBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarItem.swift; sourceTree = "<group>"; };
+		62121FD424FED4BC00B6C784 /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
+		62121FD624FED61600B6C784 /* NavigationController+Navigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+Navigable.swift"; sourceTree = "<group>"; };
+		62121FD824FED65900B6C784 /* NavigationController+NavBarSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationController+NavBarSettable.swift"; sourceTree = "<group>"; };
+		62121FDC24FED8AB00B6C784 /* NavigationCoordinator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NavigationCoordinator.storyboard; sourceTree = "<group>"; };
+		62121FDF24FEDF4E00B6C784 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				62121FB024FDD92E00B6C784 /* Login */,
+				62121FDB24FED88700B6C784 /* Navigation */,
 				62121FAA24FDD47600B6C784 /* Utilities */,
 			);
 			path = "ViewModel-Logic";
@@ -244,6 +255,8 @@
 		62121FB524FDFE4800B6C784 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				62121FDE24FEDF3300B6C784 /* Action */,
+				62121FDA24FED85800B6C784 /* Navigation */,
 				62121FB624FDFE5D00B6C784 /* TextField */,
 			);
 			path = Model;
@@ -279,12 +292,38 @@
 			children = (
 				62121FC824FEBF8700B6C784 /* Navigable.swift */,
 				62121FCA24FEC04200B6C784 /* NavigateOption.swift */,
-				62121FD224FEC5FA00B6C784 /* NavigationBarItem.swift */,
 				62121FD024FEC59E00B6C784 /* NavigationBarSettable.swift */,
+				62121FD624FED61600B6C784 /* NavigationController+Navigable.swift */,
+				62121FD824FED65900B6C784 /* NavigationController+NavBarSettable.swift */,
+				62121FD424FED4BC00B6C784 /* NavigationCoordinator.swift */,
+				62121FDC24FED8AB00B6C784 /* NavigationCoordinator.storyboard */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		62121FDA24FED85800B6C784 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				62121FD224FEC5FA00B6C784 /* NavigationBarItem.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		62121FDB24FED88700B6C784 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
 				62121FCE24FEC30E00B6C784 /* StoryboardIdentifiable.swift */,
 				62121FCC24FEC1E500B6C784 /* ViewControllerIdentifiable.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		62121FDE24FEDF3300B6C784 /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				62121FDF24FEDF4E00B6C784 /* Action.swift */,
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +409,7 @@
 			files = (
 				62121F7D24FD745800B6C784 /* LaunchScreen.storyboard in Resources */,
 				62121FC424FE311B00B6C784 /* LoginButton.xib in Resources */,
+				62121FDD24FED8AB00B6C784 /* NavigationCoordinator.storyboard in Resources */,
 				62121FC224FE2FBC00B6C784 /* Home.storyboard in Resources */,
 				62121F7A24FD745800B6C784 /* Assets.xcassets in Resources */,
 				62121F9924FD801D00B6C784 /* ContainerTextField.xib in Resources */,
@@ -392,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62121FA724FDD1A800B6C784 /* Image+ImageAsset.swift in Sources */,
+				62121FD724FED61600B6C784 /* NavigationController+Navigable.swift in Sources */,
 				62121FBB24FDFF7200B6C784 /* ContainerTextFieldDelegate.swift in Sources */,
 				62121FC924FEBF8700B6C784 /* Navigable.swift in Sources */,
 				62121FBF24FE0CCE00B6C784 /* ContainerTextFieldViewModel.swift in Sources */,
@@ -403,7 +444,10 @@
 				62121FCB24FEC04200B6C784 /* NavigateOption.swift in Sources */,
 				62121F7124FD745600B6C784 /* AppDelegate.swift in Sources */,
 				62121FAF24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift in Sources */,
+				62121FE024FEDF4E00B6C784 /* Action.swift in Sources */,
 				62121F9724FD7E7500B6C784 /* ContainerTextField.swift in Sources */,
+				62121FD524FED4BC00B6C784 /* NavigationCoordinator.swift in Sources */,
+				62121FD924FED65900B6C784 /* NavigationController+NavBarSettable.swift in Sources */,
 				62121FC624FE320600B6C784 /* LoginButton.swift in Sources */,
 				62121FBD24FE050100B6C784 /* LoginViewModel.swift in Sources */,
 				62121FCF24FEC30E00B6C784 /* StoryboardIdentifiable.swift in Sources */,

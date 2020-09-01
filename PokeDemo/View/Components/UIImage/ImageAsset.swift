@@ -10,7 +10,8 @@ import Foundation
 
 enum ImageAsset: String {
     case check
-    case eye
+    case eyeClose
+    case eyeOpen
     case pokeballBlack
     case pokeballRed
     case user

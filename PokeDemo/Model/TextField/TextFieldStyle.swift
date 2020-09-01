@@ -27,7 +27,7 @@ enum TextFieldStyle {
         case .email:
             return ImageAsset.check
         case .password:
-            return .eye
+            return .eyeOpen
         }
     }
     
@@ -37,6 +37,15 @@ enum TextFieldStyle {
             return .emailAddress
         case .password:
             return .alphabet
+        }
+    }
+    
+    var returnKeyType: UIReturnKeyType {
+        switch self {
+        case .email:
+            return UIReturnKeyType.next
+        case .password:
+            return UIReturnKeyType.continue
         }
     }
     

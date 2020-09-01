@@ -25,12 +25,12 @@ class LoginViewController: UIViewController {
     
     private func configureView() {
         hideKeyboardWhenTappedAround()
-        mailContainerTextField.set(with: .email)
-        passwordContainerTextField.set(with: .password)
+        mailContainerTextField.set(with: .email, action: { self.passwordContainerTextField.callBecomeFirstResponder() })
+        passwordContainerTextField.set(with: .password, action: { self.passwordContainerTextField.callResignFirstResponder() })
         mailContainerTextField.delegate = self
         passwordContainerTextField.delegate = self
     }
-    
+
 
 }
 

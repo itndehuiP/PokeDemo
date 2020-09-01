@@ -27,6 +27,7 @@
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="textFieldDidChange:" destination="-1" eventType="editingChanged" id="x4R-up-miE"/>
+                                <outlet property="delegate" destination="-1" id="sXb-Pq-OJK"/>
                             </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-6C-hv1">

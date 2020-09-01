@@ -15,7 +15,9 @@ class ContainerTextField: UIView, NibLoadable {
     @IBOutlet private weak var textField: UITextField!
     @IBOutlet weak var leftButton: UIButton!
     
+    private var returnAction: action = nil
     private var viewModel = ContainerTextFieldViewModel()
+    
     weak var delegate: ContainerTextFieldDelegate?
     
     override init(frame: CGRect) { //For integration by code
@@ -38,16 +40,18 @@ class ContainerTextField: UIView, NibLoadable {
 
     }
     
-    func set(with style: TextFieldStyle) {
+    func set(with style: TextFieldStyle, action: action) {
         viewModel.textFieldStyle = style
         textField.placeholder = viewModel.textFieldStyle.placeholder
         leftButton.tintColor = UIColor.secondary
         leftButton.setImage(UIImage(asset: viewModel.textFieldStyle.selectedImageButton), for: .normal)
         leftButton.isUserInteractionEnabled = viewModel.textFieldStyle.buttonEnabled
-        textField.isSecureTextEntry = style.isSecure            
-        textField.keyboardType = style.keyBoardType
+        textField.isSecureTextEntry = viewModel.textFieldStyle.isSecure
+        textField.keyboardType = viewModel.textFieldStyle.keyBoardType
         setButtonInteraction()
         leftButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        textField.returnKeyType = viewModel.textFieldStyle.returnKeyType
+        self.returnAction = action
     }
 
     @IBAction func textFieldDidChange(_ sender: Any) {
@@ -86,6 +90,16 @@ class ContainerTextField: UIView, NibLoadable {
     private func toogleSecurityText(){
         let isSecure = textField.isSecureTextEntry
         textField.isSecureTextEntry = !isSecure
+        let image = !isSecure ? viewModel.textFieldStyle.selectedImageButton : ImageAsset.eyeClose
+        leftButton.setImage(UIImage(asset: image), for: .normal)
+    }
+    
+    func callBecomeFirstResponder() {
+        textField.becomeFirstResponder()
+    }
+    
+    func callResignFirstResponder() {
+        textField.resignFirstResponder()
     }
     
 }
@@ -93,6 +107,11 @@ class ContainerTextField: UIView, NibLoadable {
 
 
 extension ContainerTextField: UITextFieldDelegate {
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let action = returnAction {
+            action()
+        }
+        return true
+    }
 }
 
