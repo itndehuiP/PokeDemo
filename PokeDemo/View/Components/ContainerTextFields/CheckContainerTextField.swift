@@ -31,6 +31,7 @@ class CheckContainerTextField: UIView, NibLoadable {
         containerView.layer.cornerRadius = 5.0
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.primary?.cgColor
+//        checkImage.image = UIImage(named: <#T##String#>)
     }
 }
 
