@@ -8,26 +8,32 @@
 
 import UIKit
 
-class CheckContainerTextField: UIView {
+@IBDesignable
+class CheckContainerTextField: UIView, NibLoadable {
 
-    @IBOutlet private var textField: UITextField!
-    @IBOutlet private var checkImage: UIImageView!
-    
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var checkImage: UIImageView!
+
     override init(frame: CGRect) { //For integration by code
-         super.init(frame: frame)
-         specifiInit()
-     }
-     
-     required init?(coder: NSCoder) { //For integration by IBOutlet
-         super.init(coder: coder)
-         specifiInit()
-     }
+    super.init(frame: frame)
+        setupFromNib()
+        specifiInit()
+    }
 
-     private func specifiInit(){
-        //init the view's elements
-     }
-    
+    required init?(coder: NSCoder) { //For integration by IBOutlet
+        super.init(coder: coder)
+        setupFromNib()
+        specifiInit()
+    }
+
+    private func specifiInit(){
+        containerView.layer.cornerRadius = 5.0
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = UIColor.primary?.cgColor
+    }
 }
+
 
 
 extension CheckContainerTextField: UITextFieldDelegate {

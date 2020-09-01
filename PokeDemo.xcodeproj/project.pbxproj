@@ -15,6 +15,8 @@
 		62121F8824FD745800B6C784 /* PokeDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F8724FD745800B6C784 /* PokeDemoTests.swift */; };
 		62121F9724FD7E7500B6C784 /* CheckContainerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F9624FD7E7500B6C784 /* CheckContainerTextField.swift */; };
 		62121F9924FD801D00B6C784 /* CheckContainerTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62121F9824FD801D00B6C784 /* CheckContainerTextField.xib */; };
+		62121F9F24FD903700B6C784 /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F9E24FD903700B6C784 /* Color+Palette.swift */; };
+		62121FA124FDC77C00B6C784 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FA024FDC77C00B6C784 /* NibLoadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		62121F8924FD745800B6C784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62121F9624FD7E7500B6C784 /* CheckContainerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckContainerTextField.swift; sourceTree = "<group>"; };
 		62121F9824FD801D00B6C784 /* CheckContainerTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckContainerTextField.xib; sourceTree = "<group>"; };
+		62121F9E24FD903700B6C784 /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
+		62121FA024FDC77C00B6C784 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +124,9 @@
 		62121F9424FD7CD500B6C784 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				62121F9D24FD902000B6C784 /* Color */,
 				62121F9524FD7CF200B6C784 /* ContainerTextFields */,
+				62121FA224FDC78400B6C784 /* Utils */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -132,6 +138,22 @@
 				62121F9824FD801D00B6C784 /* CheckContainerTextField.xib */,
 			);
 			path = ContainerTextFields;
+			sourceTree = "<group>";
+		};
+		62121F9D24FD902000B6C784 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				62121F9E24FD903700B6C784 /* Color+Palette.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		62121FA224FDC78400B6C784 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				62121FA024FDC77C00B6C784 /* NibLoadable.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +261,8 @@
 				62121F7524FD745600B6C784 /* ViewController.swift in Sources */,
 				62121F7124FD745600B6C784 /* AppDelegate.swift in Sources */,
 				62121F9724FD7E7500B6C784 /* CheckContainerTextField.swift in Sources */,
+				62121FA124FDC77C00B6C784 /* NibLoadable.swift in Sources */,
+				62121F9F24FD903700B6C784 /* Color+Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

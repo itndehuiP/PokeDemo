@@ -20,7 +20,20 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kY-nH-CFY">
                                         <rect key="frame" x="0.0" y="-39" width="414" height="896"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFy-PH-il1" customClass="CheckContainerTextField" customModule="PokeDemo" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="425.5" width="394" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="wgh-AM-x9z"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="bFy-PH-il1" firstAttribute="leading" secondItem="0kY-nH-CFY" secondAttribute="leading" constant="10" id="4F6-wL-1yT"/>
+                                            <constraint firstItem="bFy-PH-il1" firstAttribute="centerY" secondItem="0kY-nH-CFY" secondAttribute="centerY" id="KmF-hW-Xh6"/>
+                                            <constraint firstAttribute="trailing" secondItem="bFy-PH-il1" secondAttribute="trailing" constant="10" id="Trf-ua-bSV"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
