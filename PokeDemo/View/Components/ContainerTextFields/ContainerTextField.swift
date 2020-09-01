@@ -41,15 +41,51 @@ class ContainerTextField: UIView, NibLoadable {
     func set(with style: TextFieldStyle) {
         viewModel.textFieldStyle = style
         textField.placeholder = viewModel.textFieldStyle.placeholder
-        leftButton.tintColor = UIColor.constrast
-        leftButton.setImage(UIImage(asset: viewModel.textFieldStyle.selectedImageButton), for: .selected)
-        textField.isSecureTextEntry = style.isSecure
+        leftButton.tintColor = UIColor.secondary
+        leftButton.setImage(UIImage(asset: viewModel.textFieldStyle.selectedImageButton), for: .normal)
+        leftButton.isUserInteractionEnabled = viewModel.textFieldStyle.buttonEnabled
+        textField.isSecureTextEntry = style.isSecure            
         textField.keyboardType = style.keyBoardType
+        setButtonInteraction()
+        leftButton.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
 
     @IBAction func textFieldDidChange(_ sender: Any) {
         let text = textField.text
-        delegate?.textFieldValidate(type: viewModel.textFieldStyle, text: text, valid: viewModel.checkValidation(with: text))
+        let isValid = viewModel.checkValidation(with: text)
+        
+        switch viewModel.textFieldStyle {
+        case .email:
+            leftButton.tintColor = isValid ? UIColor.primary : .gray
+        default:
+            break
+        }
+        
+        delegate?.textFieldValidate(type: viewModel.textFieldStyle, text: text, valid: isValid)
+    }
+    
+    private func setButtonInteraction() {
+        switch viewModel.textFieldStyle {
+        case .email:
+            leftButton.isUserInteractionEnabled = false
+            leftButton.tintColor = .gray
+        case .password:
+            return
+        }
+    }
+    
+    @objc private func buttonAction() {
+        switch viewModel.textFieldStyle {
+        case .password:
+            toogleSecurityText()
+        default:
+            return
+        }
+    }
+
+    private func toogleSecurityText(){
+        let isSecure = textField.isSecureTextEntry
+        textField.isSecureTextEntry = !isSecure
     }
     
 }

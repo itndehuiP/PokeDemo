@@ -9,6 +9,8 @@
 import Foundation
 
 enum ImageAsset: String {
+    case check
+    case eye
     case pokeballBlack
     case pokeballRed
 }

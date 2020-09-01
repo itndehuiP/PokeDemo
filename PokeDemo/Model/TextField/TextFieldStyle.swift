@@ -25,9 +25,9 @@ enum TextFieldStyle {
     var selectedImageButton: ImageAsset {
         switch self {
         case .email:
-            return ImageAsset.pokeballBlack
+            return ImageAsset.check
         case .password:
-            return .pokeballRed
+            return .eye
         }
     }
     
@@ -42,5 +42,14 @@ enum TextFieldStyle {
     
     var isSecure: Bool {
         return self == .password
+    }
+    
+    var buttonEnabled: Bool {
+        switch self {
+        case .email:
+            return false
+        case .password:
+            return true
+        }
     }
 }
