@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckContainerTextField" customModule="PokeDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContainerTextField" customModule="PokeDemo" customModuleProvider="target">
             <connections>
-                <outlet property="checkImage" destination="eQJ-sI-GZj" id="r5J-oh-eTC"/>
                 <outlet property="containerView" destination="vew-Qg-EZa" id="tcO-9y-FUO"/>
+                <outlet property="leftButton" destination="dpl-6C-hv1" id="6NH-77-grV"/>
                 <outlet property="textField" destination="OZK-lq-lCH" id="NAJ-d2-tmP"/>
             </connections>
         </placeholder>
@@ -21,25 +21,28 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vew-Qg-EZa">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZK-lq-lCH">
-                            <rect key="frame" x="5" y="5" width="374" height="122"/>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZK-lq-lCH" userLabel="TextField">
+                            <rect key="frame" x="5" y="5" width="379" height="122"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="textFieldDidChange:" destination="-1" eventType="editingChanged" id="x4R-up-miE"/>
+                            </connections>
                         </textField>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eQJ-sI-GZj">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpl-6C-hv1">
                             <rect key="frame" x="384" y="53.5" width="25" height="25"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="eQJ-sI-GZj" secondAttribute="height" multiplier="1:1" id="fwT-qk-HeS"/>
-                                <constraint firstAttribute="width" constant="25" id="wAM-Jt-1q0"/>
+                                <constraint firstAttribute="width" secondItem="dpl-6C-hv1" secondAttribute="height" multiplier="1:1" id="4Bq-T8-v2T"/>
+                                <constraint firstAttribute="width" constant="25" id="KmQ-eT-aRi"/>
                             </constraints>
-                        </imageView>
+                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="eQJ-sI-GZj" secondAttribute="trailing" constant="5" id="5bd-pm-1rl"/>
+                        <constraint firstItem="dpl-6C-hv1" firstAttribute="centerY" secondItem="OZK-lq-lCH" secondAttribute="centerY" id="13D-uJ-10A"/>
+                        <constraint firstAttribute="trailing" secondItem="dpl-6C-hv1" secondAttribute="trailing" constant="5" id="4J1-EM-7kr"/>
+                        <constraint firstItem="OZK-lq-lCH" firstAttribute="trailing" secondItem="dpl-6C-hv1" secondAttribute="leading" id="90n-Ve-M2y"/>
                         <constraint firstItem="OZK-lq-lCH" firstAttribute="centerY" secondItem="vew-Qg-EZa" secondAttribute="centerY" id="9Jj-Dn-S6i"/>
                         <constraint firstAttribute="bottom" secondItem="OZK-lq-lCH" secondAttribute="bottom" constant="5" id="9SU-TY-ltM"/>
-                        <constraint firstItem="eQJ-sI-GZj" firstAttribute="leading" secondItem="OZK-lq-lCH" secondAttribute="trailing" constant="5" id="EBq-nv-SCv"/>
-                        <constraint firstItem="eQJ-sI-GZj" firstAttribute="centerY" secondItem="OZK-lq-lCH" secondAttribute="centerY" id="PLX-qO-3hU"/>
                         <constraint firstItem="OZK-lq-lCH" firstAttribute="leading" secondItem="vew-Qg-EZa" secondAttribute="leading" constant="5" id="lC5-7W-i0G"/>
                         <constraint firstItem="OZK-lq-lCH" firstAttribute="top" secondItem="vew-Qg-EZa" secondAttribute="top" constant="5" id="xLZ-PW-oA5"/>
                     </constraints>

@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		62121F7124FD745600B6C784 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F7024FD745600B6C784 /* AppDelegate.swift */; };
-		62121F7524FD745600B6C784 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F7424FD745600B6C784 /* ViewController.swift */; };
 		62121F7824FD745600B6C784 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62121F7624FD745600B6C784 /* Login.storyboard */; };
 		62121F7A24FD745800B6C784 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62121F7924FD745800B6C784 /* Assets.xcassets */; };
 		62121F7D24FD745800B6C784 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62121F7B24FD745800B6C784 /* LaunchScreen.storyboard */; };
 		62121F8824FD745800B6C784 /* PokeDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F8724FD745800B6C784 /* PokeDemoTests.swift */; };
-		62121F9724FD7E7500B6C784 /* CheckContainerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F9624FD7E7500B6C784 /* CheckContainerTextField.swift */; };
-		62121F9924FD801D00B6C784 /* CheckContainerTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62121F9824FD801D00B6C784 /* CheckContainerTextField.xib */; };
+		62121F9724FD7E7500B6C784 /* ContainerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F9624FD7E7500B6C784 /* ContainerTextField.swift */; };
+		62121F9924FD801D00B6C784 /* ContainerTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62121F9824FD801D00B6C784 /* ContainerTextField.xib */; };
 		62121F9F24FD903700B6C784 /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121F9E24FD903700B6C784 /* Color+Palette.swift */; };
 		62121FA124FDC77C00B6C784 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FA024FDC77C00B6C784 /* NibLoadable.swift */; };
 		62121FA524FDD15900B6C784 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FA424FDD15900B6C784 /* ImageAsset.swift */; };
@@ -22,6 +21,13 @@
 		62121FAC24FDD48F00B6C784 /* ValidationUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FAB24FDD48F00B6C784 /* ValidationUtilities.swift */; };
 		62121FAF24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FAE24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift */; };
 		62121FB224FDD97200B6C784 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FB124FDD97200B6C784 /* LoginViewController.swift */; };
+		62121FB824FDFE7F00B6C784 /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FB724FDFE7F00B6C784 /* TextFieldStyle.swift */; };
+		62121FBB24FDFF7200B6C784 /* ContainerTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FBA24FDFF7100B6C784 /* ContainerTextFieldDelegate.swift */; };
+		62121FBD24FE050100B6C784 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FBC24FE050100B6C784 /* LoginViewModel.swift */; };
+		62121FBF24FE0CCE00B6C784 /* ContainerTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FBE24FE0CCE00B6C784 /* ContainerTextFieldViewModel.swift */; };
+		62121FC224FE2FBC00B6C784 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62121FC124FE2FBC00B6C784 /* Home.storyboard */; };
+		62121FC424FE311B00B6C784 /* LoginButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62121FC324FE311B00B6C784 /* LoginButton.xib */; };
+		62121FC624FE320600B6C784 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FC524FE320600B6C784 /* LoginButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +43,6 @@
 /* Begin PBXFileReference section */
 		62121F6D24FD745600B6C784 /* PokeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62121F7024FD745600B6C784 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		62121F7424FD745600B6C784 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62121F7724FD745600B6C784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		62121F7924FD745800B6C784 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62121F7C24FD745800B6C784 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,8 +50,8 @@
 		62121F8324FD745800B6C784 /* PokeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62121F8724FD745800B6C784 /* PokeDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDemoTests.swift; sourceTree = "<group>"; };
 		62121F8924FD745800B6C784 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62121F9624FD7E7500B6C784 /* CheckContainerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckContainerTextField.swift; sourceTree = "<group>"; };
-		62121F9824FD801D00B6C784 /* CheckContainerTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckContainerTextField.xib; sourceTree = "<group>"; };
+		62121F9624FD7E7500B6C784 /* ContainerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTextField.swift; sourceTree = "<group>"; };
+		62121F9824FD801D00B6C784 /* ContainerTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerTextField.xib; sourceTree = "<group>"; };
 		62121F9E24FD903700B6C784 /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
 		62121FA024FDC77C00B6C784 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		62121FA424FDD15900B6C784 /* ImageAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
@@ -54,6 +59,13 @@
 		62121FAB24FDD48F00B6C784 /* ValidationUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationUtilities.swift; sourceTree = "<group>"; };
 		62121FAE24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollKeyboardAvoiding.swift; sourceTree = "<group>"; };
 		62121FB124FDD97200B6C784 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		62121FB724FDFE7F00B6C784 /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		62121FBA24FDFF7100B6C784 /* ContainerTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTextFieldDelegate.swift; sourceTree = "<group>"; };
+		62121FBC24FE050100B6C784 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		62121FBE24FE0CCE00B6C784 /* ContainerTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTextFieldViewModel.swift; sourceTree = "<group>"; };
+		62121FC124FE2FBC00B6C784 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		62121FC324FE311B00B6C784 /* LoginButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginButton.xib; sourceTree = "<group>"; };
+		62121FC524FE320600B6C784 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +107,10 @@
 		62121F6F24FD745600B6C784 /* PokeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				62121FB524FDFE4800B6C784 /* Model */,
 				62121FA824FDD45A00B6C784 /* ViewModel-Logic */,
 				62121F9224FD7A9900B6C784 /* View */,
 				62121F7024FD745600B6C784 /* AppDelegate.swift */,
-				62121F7424FD745600B6C784 /* ViewController.swift */,
 				62121F7924FD745800B6C784 /* Assets.xcassets */,
 				62121F7B24FD745800B6C784 /* LaunchScreen.storyboard */,
 				62121F7E24FD745800B6C784 /* Info.plist */,
@@ -118,6 +130,7 @@
 		62121F9224FD7A9900B6C784 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				62121FC024FE2FA000B6C784 /* Home */,
 				62121F9424FD7CD500B6C784 /* Components */,
 				62121F9324FD7AB300B6C784 /* Login */,
 			);
@@ -129,6 +142,8 @@
 			children = (
 				62121F7624FD745600B6C784 /* Login.storyboard */,
 				62121FB124FDD97200B6C784 /* LoginViewController.swift */,
+				62121FC324FE311B00B6C784 /* LoginButton.xib */,
+				62121FC524FE320600B6C784 /* LoginButton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -148,8 +163,8 @@
 		62121F9524FD7CF200B6C784 /* ContainerTextFields */ = {
 			isa = PBXGroup;
 			children = (
-				62121F9624FD7E7500B6C784 /* CheckContainerTextField.swift */,
-				62121F9824FD801D00B6C784 /* CheckContainerTextField.xib */,
+				62121F9624FD7E7500B6C784 /* ContainerTextField.swift */,
+				62121F9824FD801D00B6C784 /* ContainerTextField.xib */,
 			);
 			path = ContainerTextFields;
 			sourceTree = "<group>";
@@ -191,6 +206,7 @@
 		62121FAA24FDD47600B6C784 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				62121FB924FDFF3400B6C784 /* TextField */,
 				62121FAB24FDD48F00B6C784 /* ValidationUtilities.swift */,
 			);
 			path = Utilities;
@@ -207,8 +223,42 @@
 		62121FB024FDD92E00B6C784 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				62121FBC24FE050100B6C784 /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		62121FB524FDFE4800B6C784 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62121FB624FDFE5D00B6C784 /* TextField */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62121FB624FDFE5D00B6C784 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				62121FB724FDFE7F00B6C784 /* TextFieldStyle.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		62121FB924FDFF3400B6C784 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				62121FBA24FDFF7100B6C784 /* ContainerTextFieldDelegate.swift */,
+				62121FBE24FE0CCE00B6C784 /* ContainerTextFieldViewModel.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		62121FC024FE2FA000B6C784 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				62121FC124FE2FBC00B6C784 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,8 +343,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				62121F7D24FD745800B6C784 /* LaunchScreen.storyboard in Resources */,
+				62121FC424FE311B00B6C784 /* LoginButton.xib in Resources */,
+				62121FC224FE2FBC00B6C784 /* Home.storyboard in Resources */,
 				62121F7A24FD745800B6C784 /* Assets.xcassets in Resources */,
-				62121F9924FD801D00B6C784 /* CheckContainerTextField.xib in Resources */,
+				62121F9924FD801D00B6C784 /* ContainerTextField.xib in Resources */,
 				62121F7824FD745600B6C784 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,12 +366,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				62121FA724FDD1A800B6C784 /* Image+ImageAsset.swift in Sources */,
+				62121FBB24FDFF7200B6C784 /* ContainerTextFieldDelegate.swift in Sources */,
+				62121FBF24FE0CCE00B6C784 /* ContainerTextFieldViewModel.swift in Sources */,
 				62121FA524FDD15900B6C784 /* ImageAsset.swift in Sources */,
-				62121F7524FD745600B6C784 /* ViewController.swift in Sources */,
 				62121FAC24FDD48F00B6C784 /* ValidationUtilities.swift in Sources */,
+				62121FB824FDFE7F00B6C784 /* TextFieldStyle.swift in Sources */,
 				62121F7124FD745600B6C784 /* AppDelegate.swift in Sources */,
 				62121FAF24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift in Sources */,
-				62121F9724FD7E7500B6C784 /* CheckContainerTextField.swift in Sources */,
+				62121F9724FD7E7500B6C784 /* ContainerTextField.swift in Sources */,
+				62121FC624FE320600B6C784 /* LoginButton.swift in Sources */,
+				62121FBD24FE050100B6C784 /* LoginViewModel.swift in Sources */,
 				62121FA124FDC77C00B6C784 /* NibLoadable.swift in Sources */,
 				62121FB224FDD97200B6C784 /* LoginViewController.swift in Sources */,
 				62121F9F24FD903700B6C784 /* Color+Palette.swift in Sources */,
