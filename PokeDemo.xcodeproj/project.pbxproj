@@ -28,6 +28,12 @@
 		62121FC224FE2FBC00B6C784 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62121FC124FE2FBC00B6C784 /* Home.storyboard */; };
 		62121FC424FE311B00B6C784 /* LoginButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62121FC324FE311B00B6C784 /* LoginButton.xib */; };
 		62121FC624FE320600B6C784 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FC524FE320600B6C784 /* LoginButton.swift */; };
+		62121FC924FEBF8700B6C784 /* Navigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FC824FEBF8700B6C784 /* Navigable.swift */; };
+		62121FCB24FEC04200B6C784 /* NavigateOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FCA24FEC04200B6C784 /* NavigateOption.swift */; };
+		62121FCD24FEC1E500B6C784 /* ViewControllerIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FCC24FEC1E500B6C784 /* ViewControllerIdentifiable.swift */; };
+		62121FCF24FEC30E00B6C784 /* StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FCE24FEC30E00B6C784 /* StoryboardIdentifiable.swift */; };
+		62121FD124FEC59E00B6C784 /* NavigationBarSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FD024FEC59E00B6C784 /* NavigationBarSettable.swift */; };
+		62121FD324FEC5FA00B6C784 /* NavigationBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FD224FEC5FA00B6C784 /* NavigationBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,12 @@
 		62121FC124FE2FBC00B6C784 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		62121FC324FE311B00B6C784 /* LoginButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginButton.xib; sourceTree = "<group>"; };
 		62121FC524FE320600B6C784 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		62121FC824FEBF8700B6C784 /* Navigable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigable.swift; sourceTree = "<group>"; };
+		62121FCA24FEC04200B6C784 /* NavigateOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateOption.swift; sourceTree = "<group>"; };
+		62121FCC24FEC1E500B6C784 /* ViewControllerIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerIdentifiable.swift; sourceTree = "<group>"; };
+		62121FCE24FEC30E00B6C784 /* StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardIdentifiable.swift; sourceTree = "<group>"; };
+		62121FD024FEC59E00B6C784 /* NavigationBarSettable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarSettable.swift; sourceTree = "<group>"; };
+		62121FD224FEC5FA00B6C784 /* NavigationBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +142,7 @@
 		62121F9224FD7A9900B6C784 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				62121FC724FEBD9C00B6C784 /* Navigation */,
 				62121FC024FE2FA000B6C784 /* Home */,
 				62121F9424FD7CD500B6C784 /* Components */,
 				62121F9324FD7AB300B6C784 /* Login */,
@@ -261,6 +274,19 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		62121FC724FEBD9C00B6C784 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				62121FC824FEBF8700B6C784 /* Navigable.swift */,
+				62121FCA24FEC04200B6C784 /* NavigateOption.swift */,
+				62121FD224FEC5FA00B6C784 /* NavigationBarItem.swift */,
+				62121FD024FEC59E00B6C784 /* NavigationBarSettable.swift */,
+				62121FCE24FEC30E00B6C784 /* StoryboardIdentifiable.swift */,
+				62121FCC24FEC1E500B6C784 /* ViewControllerIdentifiable.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,17 +393,23 @@
 			files = (
 				62121FA724FDD1A800B6C784 /* Image+ImageAsset.swift in Sources */,
 				62121FBB24FDFF7200B6C784 /* ContainerTextFieldDelegate.swift in Sources */,
+				62121FC924FEBF8700B6C784 /* Navigable.swift in Sources */,
 				62121FBF24FE0CCE00B6C784 /* ContainerTextFieldViewModel.swift in Sources */,
 				62121FA524FDD15900B6C784 /* ImageAsset.swift in Sources */,
+				62121FCD24FEC1E500B6C784 /* ViewControllerIdentifiable.swift in Sources */,
 				62121FAC24FDD48F00B6C784 /* ValidationUtilities.swift in Sources */,
 				62121FB824FDFE7F00B6C784 /* TextFieldStyle.swift in Sources */,
+				62121FD124FEC59E00B6C784 /* NavigationBarSettable.swift in Sources */,
+				62121FCB24FEC04200B6C784 /* NavigateOption.swift in Sources */,
 				62121F7124FD745600B6C784 /* AppDelegate.swift in Sources */,
 				62121FAF24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift in Sources */,
 				62121F9724FD7E7500B6C784 /* ContainerTextField.swift in Sources */,
 				62121FC624FE320600B6C784 /* LoginButton.swift in Sources */,
 				62121FBD24FE050100B6C784 /* LoginViewModel.swift in Sources */,
+				62121FCF24FEC30E00B6C784 /* StoryboardIdentifiable.swift in Sources */,
 				62121FA124FDC77C00B6C784 /* NibLoadable.swift in Sources */,
 				62121FB224FDD97200B6C784 /* LoginViewController.swift in Sources */,
+				62121FD324FEC5FA00B6C784 /* NavigationBarItem.swift in Sources */,
 				62121F9F24FD903700B6C784 /* Color+Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
