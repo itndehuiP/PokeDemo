@@ -7,8 +7,12 @@
 //
 
 import Foundation
+import NoDB
 
-struct PokemonBrief: Codable {
+struct PokemonBrief: DBModel {
+    var noDBIndex: Int?
+    static var noDBIndexes: [String]? = ["url"]
+    
     var name: String?
     var url: String?
 }

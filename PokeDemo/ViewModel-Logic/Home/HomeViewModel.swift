@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NoDB
 
 class HomeViewModel {
     
@@ -15,6 +16,7 @@ class HomeViewModel {
     private var offset = 0
     private var isFetchInProgress = false
     var totalCount: Int = 0
+    private var pokemonsNoDB = NoDB<PokemonBrief>(name: SystemConstant.pokemonNoDB.rawValue, idKey: "url")
     
     weak var delegate: HomeFetchingDelegate?
     private let networkingManager = NetworkingManager()
@@ -24,6 +26,15 @@ class HomeViewModel {
     }
 
     func fetchPokemons(){
+        if let items = fetchFromDataBase(), !items.isEmpty {
+            self.append(result: items)
+            callFetchCompletion(results: items)
+        } else {
+            fetchFromServer()
+        }
+    }
+    
+    private func fetchFromServer() {
         guard !isFetchInProgress, let request = networkingManager.getRequest(for: .getPokemons(createQueryItems())) else {
             delegate?.onFetchFailed(with: "Request creation error")
             return
@@ -32,18 +43,45 @@ class HomeViewModel {
         networkingManager.load(request: request, response: PokemonsResult.self) { (response) in
             DispatchQueue.main.async {
                 if let data = response.data as? PokemonsResult {
-                    self.totalCount = data.count ?? 0
+                    self.saveTotalCount(total: data.count)
                     self.append(result: data.results)
-                    if self.currentCount > self.limit {
-                        self.delegate?.onFetchCompleted(with: self.calculateIndexPathsToReload(from: data.results))
-                    } else {
-                        self.delegate?.onFetchCompleted(with: .none)
-                    }
+                    self.callFetchCompletion(results: data.results)
                 } else if let error = response.error {
                     self.delegate?.onFetchFailed(with: error.localizedDescription)
                 }
             }
             self.isFetchInProgress = false
+        }
+    }
+    
+    private func callFetchCompletion(results: [PokemonBrief]?) {
+        if currentCount > limit {
+           delegate?.onFetchCompleted(with: calculateIndexPathsToReload(from: results))
+        } else {
+            delegate?.onFetchCompleted(with: .none)
+        }
+    }
+    
+    private func fetchFromDataBase() -> [PokemonBrief]? {
+        guard var savedElements = pokemonsNoDB.findSync() else { return nil }
+        self.totalCount = loadTotalCount() ?? savedElements.count
+        let lastIndex = ( offset - 1 ) + limit
+        if savedElements.isInRange(with: lastIndex) {
+            savedElements.sort {
+                guard let first = $0.url, let second = $1.url else { return false }
+                guard let id = first.split(separator: "/").last, let secondId = second.split(separator: "/").last else {
+                    return false
+                }
+                let intId = Int("\(id)")
+                let secondIntId = Int("\(secondId)")
+                
+                return (intId ?? 0) < (secondIntId ?? 0)
+            }
+            let start = Swift.min(0, (lastIndex - offset))
+            let end = Swift.max(start, lastIndex)
+            return Array(savedElements[start..<end])
+        } else {
+            return nil
         }
     }
     
@@ -56,6 +94,8 @@ class HomeViewModel {
     
     func logOut() {
         KeychainWrapper.standard.removeAllKeys()
+        UserDefaults.standard.removeObject(forKey: SystemConstant.totalPokemonsCount.rawValue)
+        pokemonsNoDB.deleteDB()
     }
     
     private func calculateIndexPathsToReload(from newPokemons: [PokemonBrief]?) -> [IndexPath]? {
@@ -71,12 +111,30 @@ class HomeViewModel {
             pokemons = []
         }
         pokemons?.append(contentsOf: items)
+        if (pokemons?.count ?? 0) < 200 {
+            saveToDB(new: items)
+        }
         offset = pokemons?.count ?? 0
+    }
+    
+    private func saveToDB(new items: [PokemonBrief]?) {
+        guard let items = items else { return }
+        pokemonsNoDB.save(obj: items)
+        pokemonsNoDB.saveDB()
     }
     
     private func createQueryItems() -> [URLQueryItem]? {
         let offset = pokemons?.count ?? 0
         return [URLQueryItem(name: "limit", value: "\(limit)"),
                     URLQueryItem(name: "offset", value: "\(offset)")]
+    }
+    
+    private func loadTotalCount() -> Int? {
+        UserDefaults.standard.integer(forKey: SystemConstant.totalPokemonsCount.rawValue)
+    }
+    
+    private func saveTotalCount(total: Int?){
+        self.totalCount = total ?? 0
+        UserDefaults.standard.set(totalCount, forKey: SystemConstant.totalPokemonsCount.rawValue)
     }
 }

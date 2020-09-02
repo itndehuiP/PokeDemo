@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -63,6 +63,7 @@
 		6212201824FF80C800B6C784 /* HomeFetchingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201724FF80C800B6C784 /* HomeFetchingDelegate.swift */; };
 		6212201B24FF980100B6C784 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201A24FF980100B6C784 /* AlertDisplayer.swift */; };
 		6212201D24FF986A00B6C784 /* UIViewController+AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201C24FF986A00B6C784 /* UIViewController+AlertDisplayer.swift */; };
+		6212202024FF99C100B6C784 /* NoDB in Frameworks */ = {isa = PBXBuildFile; productRef = 6212201F24FF99C100B6C784 /* NoDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6212202024FF99C100B6C784 /* NoDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,8 +181,8 @@
 			children = (
 				62121FEB24FF017C00B6C784 /* Networking */,
 				62121FB524FDFE4800B6C784 /* Model */,
-				62121FA824FDD45A00B6C784 /* ViewModel-Logic */,
 				62121F9224FD7A9900B6C784 /* View */,
+				62121FA824FDD45A00B6C784 /* ViewModel-Logic */,
 				62121F7024FD745600B6C784 /* AppDelegate.swift */,
 				62121F7924FD745800B6C784 /* Assets.xcassets */,
 				62121F7B24FD745800B6C784 /* LaunchScreen.storyboard */,
@@ -478,6 +480,9 @@
 			dependencies = (
 			);
 			name = PokeDemo;
+			packageProductDependencies = (
+				6212201F24FF99C100B6C784 /* NoDB */,
+			);
 			productName = PokeDemo;
 			productReference = 62121F6D24FD745600B6C784 /* PokeDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -528,6 +533,9 @@
 				Base,
 			);
 			mainGroup = 62121F6424FD745600B6C784;
+			packageReferences = (
+				6212201E24FF99C100B6C784 /* XCRemoteSwiftPackageReference "NoDB" */,
+			);
 			productRefGroup = 62121F6E24FD745600B6C784 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -879,6 +887,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6212201E24FF99C100B6C784 /* XCRemoteSwiftPackageReference "NoDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ultim8p/NoDB.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6212201F24FF99C100B6C784 /* NoDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6212201E24FF99C100B6C784 /* XCRemoteSwiftPackageReference "NoDB" */;
+			productName = NoDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 62121F6524FD745600B6C784 /* Project object */;
 }

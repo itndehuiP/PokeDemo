@@ -10,4 +10,6 @@ import Foundation
 
 enum SystemConstant: String {
     case sessionToken
+    case pokemonNoDB
+    case totalPokemonsCount
 }
