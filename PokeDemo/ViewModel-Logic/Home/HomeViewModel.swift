@@ -17,6 +17,8 @@ class HomeViewModel {
     private var isFetchInProgress = false
     var totalCount: Int = 0
     private var pokemonsNoDB = NoDB<PokemonBrief>(name: SystemConstant.pokemonNoDB.rawValue, idKey: "url")
+    private var errorFiredDate: Date?
+    
     
     weak var delegate: HomeFetchingDelegate?
     private let networkingManager = NetworkingManager()
@@ -50,13 +52,22 @@ class HomeViewModel {
                     self.append(result: data.results)
                     self.callFetchCompletion(results: data.results)
                 } else if let error = response.error {
-                    self.delegate?.onFetchFailed(with: error.localizedDescription)
+                    self.triggerFetchFailed(error: error)
                 }
             }
             self.isFetchInProgress = false
         }
     }
     
+    private func triggerFetchFailed(error: Error) {
+        let secondsPassed = -(Date().secondsInterval(from: self.errorFiredDate) ?? -31)
+        print("secondsPassed \(secondsPassed)")
+        if secondsPassed > 30 {
+            self.errorFiredDate = Date()
+            self.delegate?.onFetchFailed(with: error.localizedDescription)
+        }
+    }
+        
     private func callFetchCompletion(results: [PokemonBrief]?) {
         if currentCount > limit {
            delegate?.onFetchCompleted(with: calculateIndexPathsToReload(from: results))
