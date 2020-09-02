@@ -12,6 +12,7 @@ import UIKit
 class LoginButton: UIView, NibLoadable {
 
     @IBOutlet weak var button: UIButton!
+    weak var delegate: LoginButtonDelegate?
     
     override init(frame: CGRect) { //For integration by code
     super.init(frame: frame)
@@ -32,10 +33,17 @@ class LoginButton: UIView, NibLoadable {
         button.layer.cornerRadius = 10
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
     
     func set(toEnable: Bool) {
         button.isEnabled = toEnable
     }
+    
+    @objc private func buttonAction() {
+        delegate?.onButtonTapped()
+    }
+    
+
     
 }

@@ -29,9 +29,13 @@ class LoginViewController: UIViewController {
         passwordContainerTextField.set(with: .password, action: { self.passwordContainerTextField.callResignFirstResponder() })
         mailContainerTextField.delegate = self
         passwordContainerTextField.delegate = self
+        loginButton.delegate = self
     }
 
 
+    private func tryLogin(){
+        viewModel.tryLogin()
+    }
 }
 
 extension LoginViewController: ContainerTextFieldDelegate {
@@ -64,5 +68,12 @@ extension LoginViewController {
     @objc private func dismissKeyboard() {
         self.scrollView.setContentOffset(CGPoint.zero, animated: true)
         view.endEditing(true)
+    }
+}
+
+//MARK: Login button delegate
+extension LoginViewController: LoginButtonDelegate {
+    func onButtonTapped() {
+        self.tryLogin()
     }
 }

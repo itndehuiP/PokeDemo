@@ -18,4 +18,9 @@ struct LoginViewModel {
     func inputValidation() -> Bool {
         return mailValidation && passwordValidation
     }
+    
+    func tryLogin() {
+        let token = "token"
+        KeychainWrapper.standard.set(token, forKey: SystemConstant.sessionToken.rawValue)
+    }
 }
