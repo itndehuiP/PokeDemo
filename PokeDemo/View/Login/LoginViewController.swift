@@ -35,6 +35,7 @@ class LoginViewController: UIViewController {
 
     private func tryLogin(){
         viewModel.tryLogin()
+        self.navigationController?.setRoot(vc: .home)
     }
 }
 

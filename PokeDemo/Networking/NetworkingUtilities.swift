@@ -36,11 +36,13 @@ class NetworkingUtilities {
         return dict
     }
     
-    static func createURLParameters(components: [String]) -> String {
-        var appndComponent = ""
-        for parameter in components {
-            appndComponent += parameter+"/"
-        }
-        return appndComponent
+    static func buildURL(path: String, queryItems: [URLQueryItem]?) -> URL? {
+        var components = URLComponents()
+        components.scheme = NetworkingConstants.SCHEME
+        components.host = NetworkingConstants.HOST
+        components.path = "\(NetworkingConstants.BASEPATH)\(path)"
+        components.queryItems = queryItems
+        return components.url
     }
+    
 }

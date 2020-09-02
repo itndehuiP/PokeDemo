@@ -11,8 +11,10 @@ import Foundation
 class NetworkingConstants: NSObject {
     static let envM = EnviromentManager()
     
-    static let HOST_URL: String =   envM.getHost()
-    static let DOMAIN_URL: String = envM.getHost() + ""
-    static let BASE_URL: String = HOST_URL + "api/"
-    static let LOGIN: String = BASE_URL + "token/"
+    static let SCHEME: String = envM.getScheme()
+    static let HOST: String = envM.getHost()
+    static let BASEPATH: String = envM.getBasePath()
+    
+    static let LOGIN: String = "token/"
+    static let GETPOKEMONS: String = "/pokemon"
 }

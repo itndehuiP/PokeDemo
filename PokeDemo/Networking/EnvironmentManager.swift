@@ -13,16 +13,23 @@ enum Environment {
     case testing
 }
 
-
 struct EnviromentManager {
     let environment: Environment = .testing
     
     func getHost() -> String {
-        switch self.environment {
-        case .production:
-            return "https://park-in.mx/back/"
+        switch environment {
         case .testing:
-            return "http://garagecoders.rocks:4000/"
+            return "pokeapi.co"
+        case .production:
+            return "pokeapi.co"
         }
+    }
+    
+    func getScheme() -> String {
+        return "https"
+    }
+    
+    func getBasePath() -> String {
+        return "/api/v2"
     }
 }

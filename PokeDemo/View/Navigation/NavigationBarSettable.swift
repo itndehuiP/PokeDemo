@@ -36,7 +36,7 @@ extension NavigationBarSettable where Self: UINavigationController {
         switch item {
         case .logout(let selector):
             button.setImage(UIImage(asset: .user), for: .normal)
-            button.tintColor = UIColor.primary
+            button.tintColor = UIColor.secondary
             button.addTarget(vc, action: selector, for: .touchUpInside)
             return UIBarButtonItem(customView: button)
         }

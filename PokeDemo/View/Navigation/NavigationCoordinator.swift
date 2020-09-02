@@ -19,7 +19,11 @@ class NavigationCoordinator: UINavigationController {
     }
     
     private func setInitial() {
-        self.setRoot(vc: .login)
+        if KeychainWrapper.standard.string(forKey: SystemConstant.sessionToken.rawValue) != nil {
+            self.setRoot(vc: .home)
+        } else {
+            self.setRoot(vc: .login)
+        }
     }
 
 }

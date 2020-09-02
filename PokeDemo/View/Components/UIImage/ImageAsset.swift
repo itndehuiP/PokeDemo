@@ -12,7 +12,6 @@ enum ImageAsset: String {
     case check
     case eyeClose
     case eyeOpen
-    case pokeballBlack
-    case pokeballRed
+    case pokeball
     case user
 }

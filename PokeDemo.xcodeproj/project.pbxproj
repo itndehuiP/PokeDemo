@@ -52,6 +52,14 @@
 		62121FFD24FF1E2300B6C784 /* NetworkingConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FFC24FF1E2300B6C784 /* NetworkingConstant.swift */; };
 		62121FFF24FF1E8800B6C784 /* EnvironmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62121FFE24FF1E8800B6C784 /* EnvironmentManager.swift */; };
 		6212200324FF24AF00B6C784 /* SummarizeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212200224FF24AF00B6C784 /* SummarizeResponse.swift */; };
+		6212200524FF2FD100B6C784 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212200424FF2FD100B6C784 /* HomeViewController.swift */; };
+		6212200824FF38AC00B6C784 /* PokemonsResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212200724FF38AC00B6C784 /* PokemonsResultModel.swift */; };
+		6212200A24FF392100B6C784 /* PokemonBriefModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212200924FF392100B6C784 /* PokemonBriefModel.swift */; };
+		6212200D24FF412F00B6C784 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212200C24FF412F00B6C784 /* HomeViewModel.swift */; };
+		6212200F24FF479100B6C784 /* HomeRowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6212200E24FF479100B6C784 /* HomeRowCell.xib */; };
+		6212201124FF48EC00B6C784 /* HomeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201024FF48EC00B6C784 /* HomeRowCell.swift */; };
+		6212201424FF4C5100B6C784 /* Array+IndexRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201324FF4C5100B6C784 /* Array+IndexRange.swift */; };
+		6212201624FF656200B6C784 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201524FF656200B6C784 /* ResponseError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +122,14 @@
 		62121FFC24FF1E2300B6C784 /* NetworkingConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConstant.swift; sourceTree = "<group>"; };
 		62121FFE24FF1E8800B6C784 /* EnvironmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentManager.swift; sourceTree = "<group>"; };
 		6212200224FF24AF00B6C784 /* SummarizeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarizeResponse.swift; sourceTree = "<group>"; };
+		6212200424FF2FD100B6C784 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6212200724FF38AC00B6C784 /* PokemonsResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsResultModel.swift; sourceTree = "<group>"; };
+		6212200924FF392100B6C784 /* PokemonBriefModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonBriefModel.swift; sourceTree = "<group>"; };
+		6212200C24FF412F00B6C784 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		6212200E24FF479100B6C784 /* HomeRowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRowCell.xib; sourceTree = "<group>"; };
+		6212201024FF48EC00B6C784 /* HomeRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRowCell.swift; sourceTree = "<group>"; };
+		6212201324FF4C5100B6C784 /* Array+IndexRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+IndexRange.swift"; sourceTree = "<group>"; };
+		6212201524FF656200B6C784 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +263,7 @@
 		62121FA824FDD45A00B6C784 /* ViewModel-Logic */ = {
 			isa = PBXGroup;
 			children = (
+				6212200B24FF411B00B6C784 /* Home */,
 				62121FB024FDD92E00B6C784 /* Login */,
 				62121FDB24FED88700B6C784 /* Navigation */,
 				62121FAA24FDD47600B6C784 /* Utilities */,
@@ -285,9 +302,11 @@
 			isa = PBXGroup;
 			children = (
 				62121FDE24FEDF3300B6C784 /* Action */,
+				6212201224FF4C3C00B6C784 /* Array */,
 				62121FE624FEE9D700B6C784 /* Constants */,
 				62121FF924FF1CD900B6C784 /* Login */,
 				62121FDA24FED85800B6C784 /* Navigation */,
+				6212200624FF383600B6C784 /* Pokemon */,
 				62121FB624FDFE5D00B6C784 /* TextField */,
 			);
 			path = Model;
@@ -314,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				62121FC124FE2FBC00B6C784 /* Home.storyboard */,
+				6212200424FF2FD100B6C784 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -385,6 +405,7 @@
 				62121FF324FF119400B6C784 /* RequestMethod.swift */,
 				62121FEE24FF06F200B6C784 /* RequestType.swift */,
 				6212200224FF24AF00B6C784 /* SummarizeResponse.swift */,
+				6212201524FF656200B6C784 /* ResponseError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -395,6 +416,33 @@
 				62121FFA24FF1CEE00B6C784 /* LoginModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		6212200624FF383600B6C784 /* Pokemon */ = {
+			isa = PBXGroup;
+			children = (
+				6212200724FF38AC00B6C784 /* PokemonsResultModel.swift */,
+				6212200924FF392100B6C784 /* PokemonBriefModel.swift */,
+			);
+			path = Pokemon;
+			sourceTree = "<group>";
+		};
+		6212200B24FF411B00B6C784 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6212200C24FF412F00B6C784 /* HomeViewModel.swift */,
+				6212200E24FF479100B6C784 /* HomeRowCell.xib */,
+				6212201024FF48EC00B6C784 /* HomeRowCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6212201224FF4C3C00B6C784 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				6212201324FF4C5100B6C784 /* Array+IndexRange.swift */,
+			);
+			path = Array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +527,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				62121F7D24FD745800B6C784 /* LaunchScreen.storyboard in Resources */,
+				6212200F24FF479100B6C784 /* HomeRowCell.xib in Resources */,
 				62121FC424FE311B00B6C784 /* LoginButton.xib in Resources */,
 				62121FDD24FED8AB00B6C784 /* NavigationCoordinator.storyboard in Resources */,
 				62121FC224FE2FBC00B6C784 /* Home.storyboard in Resources */,
@@ -514,6 +563,7 @@
 				62121FCD24FEC1E500B6C784 /* ViewControllerIdentifiable.swift in Sources */,
 				62121FAC24FDD48F00B6C784 /* ValidationUtilities.swift in Sources */,
 				62121FEA24FEEAD700B6C784 /* LoginButtonDelegate.swift in Sources */,
+				6212200824FF38AC00B6C784 /* PokemonsResultModel.swift in Sources */,
 				62121FB824FDFE7F00B6C784 /* TextFieldStyle.swift in Sources */,
 				62121FD124FEC59E00B6C784 /* NavigationBarSettable.swift in Sources */,
 				62121FCB24FEC04200B6C784 /* NavigateOption.swift in Sources */,
@@ -523,17 +573,23 @@
 				62121F7124FD745600B6C784 /* AppDelegate.swift in Sources */,
 				62121FAF24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift in Sources */,
 				62121FE024FEDF4E00B6C784 /* Action.swift in Sources */,
+				6212200D24FF412F00B6C784 /* HomeViewModel.swift in Sources */,
+				6212200524FF2FD100B6C784 /* HomeViewController.swift in Sources */,
 				62121F9724FD7E7500B6C784 /* ContainerTextField.swift in Sources */,
 				62121FF624FF141B00B6C784 /* HTTPHeader.swift in Sources */,
 				62121FD524FED4BC00B6C784 /* NavigationCoordinator.swift in Sources */,
+				6212201624FF656200B6C784 /* ResponseError.swift in Sources */,
+				6212201124FF48EC00B6C784 /* HomeRowCell.swift in Sources */,
 				62121FD924FED65900B6C784 /* NavigationController+NavBarSettable.swift in Sources */,
 				62121FC624FE320600B6C784 /* LoginButton.swift in Sources */,
+				6212200A24FF392100B6C784 /* PokemonBriefModel.swift in Sources */,
 				62121FFB24FF1CEE00B6C784 /* LoginModel.swift in Sources */,
 				62121FBD24FE050100B6C784 /* LoginViewModel.swift in Sources */,
 				62121FFD24FF1E2300B6C784 /* NetworkingConstant.swift in Sources */,
 				62121FCF24FEC30E00B6C784 /* StoryboardIdentifiable.swift in Sources */,
 				62121FA124FDC77C00B6C784 /* NibLoadable.swift in Sources */,
 				62121FB224FDD97200B6C784 /* LoginViewController.swift in Sources */,
+				6212201424FF4C5100B6C784 /* Array+IndexRange.swift in Sources */,
 				62121FFF24FF1E8800B6C784 /* EnvironmentManager.swift in Sources */,
 				62121FD324FEC5FA00B6C784 /* NavigationBarItem.swift in Sources */,
 				62121FE324FEE4D100B6C784 /* KeychainItemAccessibility.swift in Sources */,

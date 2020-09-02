@@ -19,7 +19,9 @@ class NetworkingManager {
             if let response = response as? HTTPURLResponse {
                 summarizeResponse.status = response.statusCode
             }
-            if let data = data {
+            if let error = error {
+                summarizeResponse.error = error
+            } else if let data = data {
                 do {
                     let dataResponse = try JSONDecoder().decode(T.self, from: data)
                     summarizeResponse.data =  dataResponse
@@ -34,14 +36,14 @@ class NetworkingManager {
     func getRequest(for type: RequestType) -> URLRequest? {
         switch type {
         case .login(let model):
-            return createRequest(method: .GET, headers: [.contentTypeJSON], body: model, url: NetworkingConstants.LOGIN)
+            return createRequest(method: .GET, headers: [.contentTypeJSON], body: model, path: NetworkingConstants.LOGIN, urlQueryItems: nil)
         case .getPokemons:
-            return nil
+            return createRequest(method: .GET, headers: [.contentTypeJSON], body: nil as PokemonsResult?, path: NetworkingConstants.GETPOKEMONS, urlQueryItems: nil)
         }
     }
     
-    private func createRequest<T: Codable>(method: RequestMethod, headers: [HTTPHeader], body: T? = nil, url: String, urlComponents: [String]? = nil) -> URLRequest? {
-        guard let url = buildURL(address: url, urlComponents: urlComponents) else { return nil }
+    private func createRequest<T: Codable>(method: RequestMethod, headers: [HTTPHeader], body: T? = nil, path: String, urlQueryItems: [URLQueryItem]?) -> URLRequest? {
+        guard let url = NetworkingUtilities.buildURL(path: path, queryItems: urlQueryItems) else { return nil }
             var request = URLRequest(url: url)
             request.httpMethod = method.rawValue
             request.allHTTPHeaderFields = NetworkingUtilities.createHeaderDictionary(with: headers)
@@ -51,12 +53,5 @@ class NetworkingManager {
             return request
     }
     
-    private func buildURL(address: String, urlComponents: [String]?) -> URL? {
-        guard var url = URL(string: address) else { return nil }
-             if let urlComponents = urlComponents {
-                 let path = NetworkingUtilities.createURLParameters(components: urlComponents)
-                 url.appendPathComponent(path)
-             }
-        return url
-    }
+
 }
