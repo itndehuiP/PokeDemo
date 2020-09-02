@@ -30,12 +30,12 @@ class LoginViewController: UIViewController {
         mailContainerTextField.delegate = self
         passwordContainerTextField.delegate = self
         loginButton.delegate = self
+        viewModel.delegate = self
     }
 
 
     private func tryLogin(){
         viewModel.tryLogin()
-        self.navigationController?.setRoot(vc: .home)
     }
 }
 
@@ -77,4 +77,17 @@ extension LoginViewController: LoginButtonDelegate {
     func onButtonTapped() {
         self.tryLogin()
     }
+}
+
+//MARK: LoginViewModel Delegate
+extension LoginViewController : LoginViewModelDelegate {
+    func failedLogin(error: ResponseError) {
+        let action = UIAlertAction(title: "OK", style: .default)
+        displayAlert(with: "Error", message: error.description, actions: [action])
+    }
+    
+    func successfullLogin(token: String?) {
+        self.navigationController?.setRoot(vc: .home)
+    }
+    
 }

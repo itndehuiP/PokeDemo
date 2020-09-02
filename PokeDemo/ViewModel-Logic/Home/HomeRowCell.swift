@@ -24,7 +24,7 @@ class HomeRowCell: UITableViewCell {
         title.font = UIFont.preferredFont(forTextStyle: .headline)
         leftImage.image = UIImage(asset: .pokeball)
         separator.layer.cornerRadius = 5
-        separator.backgroundColor = UIColor.primary
+        separator.backgroundColor = UIColor.secondary
         indicatorView.tintColor = UIColor.secondary
         indicatorView.hidesWhenStopped = true
 

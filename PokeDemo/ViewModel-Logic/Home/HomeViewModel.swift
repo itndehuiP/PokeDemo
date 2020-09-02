@@ -35,8 +35,11 @@ class HomeViewModel {
     }
     
     private func fetchFromServer() {
-        guard !isFetchInProgress, let request = networkingManager.getRequest(for: .getPokemons(createQueryItems())) else {
-            delegate?.onFetchFailed(with: "Request creation error")
+        guard !isFetchInProgress else {
+            return
+        }
+        guard let request = networkingManager.getRequest(for: .getPokemons(createQueryItems())) else {
+            delegate?.onFetchFailed(with: "Error while downloading")
             return
         }
         isFetchInProgress = true
@@ -67,16 +70,7 @@ class HomeViewModel {
         self.totalCount = loadTotalCount() ?? savedElements.count
         let lastIndex = ( offset - 1 ) + limit
         if savedElements.isInRange(with: lastIndex) {
-            savedElements.sort {
-                guard let first = $0.url, let second = $1.url else { return false }
-                guard let id = first.split(separator: "/").last, let secondId = second.split(separator: "/").last else {
-                    return false
-                }
-                let intId = Int("\(id)")
-                let secondIntId = Int("\(secondId)")
-                
-                return (intId ?? 0) < (secondIntId ?? 0)
-            }
+            sortByURL(items: &savedElements)
             let start = Swift.min(0, (lastIndex - offset))
             let end = Swift.max(start, lastIndex)
             return Array(savedElements[start..<end])
@@ -93,9 +87,9 @@ class HomeViewModel {
     }
     
     func logOut() {
+        pokemonsNoDB.deleteDB()
         KeychainWrapper.standard.removeAllKeys()
         UserDefaults.standard.removeObject(forKey: SystemConstant.totalPokemonsCount.rawValue)
-        pokemonsNoDB.deleteDB()
     }
     
     private func calculateIndexPathsToReload(from newPokemons: [PokemonBrief]?) -> [IndexPath]? {
@@ -136,5 +130,18 @@ class HomeViewModel {
     private func saveTotalCount(total: Int?){
         self.totalCount = total ?? 0
         UserDefaults.standard.set(totalCount, forKey: SystemConstant.totalPokemonsCount.rawValue)
+    }
+    
+    func sortByURL(items: inout [PokemonBrief]) {
+        items.sort {
+               guard let first = $0.url, let second = $1.url else { return false }
+               guard let id = first.split(separator: "/").last, let secondId = second.split(separator: "/").last else {
+                   return false
+               }
+               let intId = Int("\(id)")
+               let secondIntId = Int("\(secondId)")
+               
+               return (intId ?? 0) < (secondIntId ?? 0)
+           }
     }
 }

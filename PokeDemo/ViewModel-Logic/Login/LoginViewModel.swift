@@ -15,12 +15,20 @@ struct LoginViewModel {
     var mail: String?
     var password: String?
     
+    weak var delegate: LoginViewModelDelegate?
+    
     func inputValidation() -> Bool {
         return mailValidation && passwordValidation
     }
     
     func tryLogin() {
-        let token = "token"
-        KeychainWrapper.standard.set(token, forKey: SystemConstant.sessionToken.rawValue)
+        if mail?.lowercased() == "yellow@mail.com" && password == "Yellow1234." {
+            let token = "token"
+            KeychainWrapper.standard.set(token, forKey: SystemConstant.sessionToken.rawValue)
+            delegate?.successfullLogin(token: token)
+        } else {
+            delegate?.failedLogin(error: .invalidLogin)
+        }
+
     }
 }

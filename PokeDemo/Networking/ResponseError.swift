@@ -10,4 +10,9 @@ import Foundation
 
 enum ResponseError: Error {
     case parseError
+    case invalidLogin
+    
+    var description: String {
+        "Email or pasword incorrect"
+    }
 }
