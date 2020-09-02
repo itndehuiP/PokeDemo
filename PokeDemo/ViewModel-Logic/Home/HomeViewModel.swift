@@ -19,7 +19,6 @@ class HomeViewModel {
     private var pokemonsNoDB = NoDB<PokemonBrief>(name: SystemConstant.pokemonNoDB.rawValue, idKey: "url")
     private var errorFiredDate: Date?
     
-    
     weak var delegate: HomeFetchingDelegate?
     private let networkingManager = NetworkingManager()
     
@@ -61,7 +60,6 @@ class HomeViewModel {
     
     private func triggerFetchFailed(error: Error) {
         let secondsPassed = -(Date().secondsInterval(from: self.errorFiredDate) ?? -31)
-        print("secondsPassed \(secondsPassed)")
         if secondsPassed > 30 {
             self.errorFiredDate = Date()
             self.delegate?.onFetchFailed(with: error.localizedDescription)
@@ -88,6 +86,12 @@ class HomeViewModel {
         } else {
             return nil
         }
+    }
+    
+    private func createQueryItems() -> [URLQueryItem]? {
+        let offset = pokemons?.count ?? 0
+        return [URLQueryItem(name: "limit", value: "\(limit)"),
+                    URLQueryItem(name: "offset", value: "\(offset)")]
     }
     
     func getItem(for index: Int?) -> PokemonBrief? {
@@ -128,11 +132,6 @@ class HomeViewModel {
         pokemonsNoDB.saveDB()
     }
     
-    private func createQueryItems() -> [URLQueryItem]? {
-        let offset = pokemons?.count ?? 0
-        return [URLQueryItem(name: "limit", value: "\(limit)"),
-                    URLQueryItem(name: "offset", value: "\(offset)")]
-    }
     
     private func loadTotalCount() -> Int? {
         UserDefaults.standard.integer(forKey: SystemConstant.totalPokemonsCount.rawValue)

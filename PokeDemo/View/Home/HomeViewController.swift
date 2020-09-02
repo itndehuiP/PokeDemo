@@ -78,6 +78,7 @@ extension HomeViewController: UITableViewDataSourcePrefetching {
     }
 }
 
+//MARK: Home fetching delegate
 extension HomeViewController: HomeFetchingDelegate {
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
 
