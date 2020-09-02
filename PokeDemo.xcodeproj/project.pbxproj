@@ -60,6 +60,9 @@
 		6212201124FF48EC00B6C784 /* HomeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201024FF48EC00B6C784 /* HomeRowCell.swift */; };
 		6212201424FF4C5100B6C784 /* Array+IndexRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201324FF4C5100B6C784 /* Array+IndexRange.swift */; };
 		6212201624FF656200B6C784 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201524FF656200B6C784 /* ResponseError.swift */; };
+		6212201824FF80C800B6C784 /* HomeFetchingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201724FF80C800B6C784 /* HomeFetchingDelegate.swift */; };
+		6212201B24FF980100B6C784 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201A24FF980100B6C784 /* AlertDisplayer.swift */; };
+		6212201D24FF986A00B6C784 /* UIViewController+AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6212201C24FF986A00B6C784 /* UIViewController+AlertDisplayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,9 @@
 		6212201024FF48EC00B6C784 /* HomeRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRowCell.swift; sourceTree = "<group>"; };
 		6212201324FF4C5100B6C784 /* Array+IndexRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+IndexRange.swift"; sourceTree = "<group>"; };
 		6212201524FF656200B6C784 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		6212201724FF80C800B6C784 /* HomeFetchingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFetchingDelegate.swift; sourceTree = "<group>"; };
+		6212201A24FF980100B6C784 /* AlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
+		6212201C24FF986A00B6C784 /* UIViewController+AlertDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+AlertDisplayer.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +201,7 @@
 		62121F9224FD7A9900B6C784 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6212201924FF97EB00B6C784 /* AlertDisplayer */,
 				62121F9424FD7CD500B6C784 /* Components */,
 				62121FC024FE2FA000B6C784 /* Home */,
 				62121F9324FD7AB300B6C784 /* Login */,
@@ -433,6 +440,7 @@
 				6212200C24FF412F00B6C784 /* HomeViewModel.swift */,
 				6212200E24FF479100B6C784 /* HomeRowCell.xib */,
 				6212201024FF48EC00B6C784 /* HomeRowCell.swift */,
+				6212201724FF80C800B6C784 /* HomeFetchingDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -443,6 +451,15 @@
 				6212201324FF4C5100B6C784 /* Array+IndexRange.swift */,
 			);
 			path = Array;
+			sourceTree = "<group>";
+		};
+		6212201924FF97EB00B6C784 /* AlertDisplayer */ = {
+			isa = PBXGroup;
+			children = (
+				6212201A24FF980100B6C784 /* AlertDisplayer.swift */,
+				6212201C24FF986A00B6C784 /* UIViewController+AlertDisplayer.swift */,
+			);
+			path = AlertDisplayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -574,6 +591,7 @@
 				62121FAF24FDD87400B6C784 /* ScrollKeyboardAvoiding.swift in Sources */,
 				62121FE024FEDF4E00B6C784 /* Action.swift in Sources */,
 				6212200D24FF412F00B6C784 /* HomeViewModel.swift in Sources */,
+				6212201824FF80C800B6C784 /* HomeFetchingDelegate.swift in Sources */,
 				6212200524FF2FD100B6C784 /* HomeViewController.swift in Sources */,
 				62121F9724FD7E7500B6C784 /* ContainerTextField.swift in Sources */,
 				62121FF624FF141B00B6C784 /* HTTPHeader.swift in Sources */,
@@ -592,6 +610,8 @@
 				6212201424FF4C5100B6C784 /* Array+IndexRange.swift in Sources */,
 				62121FFF24FF1E8800B6C784 /* EnvironmentManager.swift in Sources */,
 				62121FD324FEC5FA00B6C784 /* NavigationBarItem.swift in Sources */,
+				6212201D24FF986A00B6C784 /* UIViewController+AlertDisplayer.swift in Sources */,
+				6212201B24FF980100B6C784 /* AlertDisplayer.swift in Sources */,
 				62121FE324FEE4D100B6C784 /* KeychainItemAccessibility.swift in Sources */,
 				62121F9F24FD903700B6C784 /* Color+Palette.swift in Sources */,
 				62121FEF24FF06F200B6C784 /* RequestType.swift in Sources */,

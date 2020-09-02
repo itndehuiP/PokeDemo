@@ -37,8 +37,8 @@ class NetworkingManager {
         switch type {
         case .login(let model):
             return createRequest(method: .GET, headers: [.contentTypeJSON], body: model, path: NetworkingConstants.LOGIN, urlQueryItems: nil)
-        case .getPokemons:
-            return createRequest(method: .GET, headers: [.contentTypeJSON], body: nil as PokemonsResult?, path: NetworkingConstants.GETPOKEMONS, urlQueryItems: nil)
+        case .getPokemons(let items):
+            return createRequest(method: .GET, headers: [.contentTypeJSON], body: nil as PokemonsResult?, path: NetworkingConstants.GETPOKEMONS, urlQueryItems: items)
         }
     }
     

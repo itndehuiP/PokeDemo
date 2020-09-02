@@ -13,9 +13,11 @@ class HomeRowCell: UITableViewCell {
     @IBOutlet private weak var title: UILabel!
     @IBOutlet private weak var leftImage: UIImageView!
     @IBOutlet private weak var separator: UIView!
+    @IBOutlet var indicatorView: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         configureView()
+        setToNone()
     }
     
     private func configureView() {
@@ -23,9 +25,24 @@ class HomeRowCell: UITableViewCell {
         leftImage.image = UIImage(asset: .pokeball)
         separator.layer.cornerRadius = 5
         separator.backgroundColor = UIColor.primary
+        indicatorView.tintColor = UIColor.secondary
+        indicatorView.hidesWhenStopped = true
+
     }
     
-    func load(with pokemon: PokemonBrief) {
-        title.text = pokemon.name
+    func load(with pokemon: PokemonBrief?) {
+        if let pokemon = pokemon {
+            title.text = pokemon.name?.capitalized
+            leftImage.alpha = 1
+            indicatorView.stopAnimating()
+        } else {
+            setToNone()
+        }
+    }
+    
+    private func setToNone() {
+        indicatorView.startAnimating()
+        leftImage.alpha = 0
+        title.text = nil
     }
 }

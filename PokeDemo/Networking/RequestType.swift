@@ -10,5 +10,5 @@ import Foundation
 
 enum RequestType {
     case login(LoginModel)
-    case getPokemons
+    case getPokemons([URLQueryItem]?)
 }

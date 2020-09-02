@@ -1,5 +1,5 @@
 //
-//  ResponseError.swift
+//  UIViewController+AlertDisplayer.swift
 //  PokeDemo
 //
 //  Created by Guerson on 2020-09-02.
@@ -7,7 +7,6 @@
 //
 
 import Foundation
+import UIKit
 
-enum ResponseError: Error {
-    case parseError
-}
+extension UIViewController: AlertDisplayer {}

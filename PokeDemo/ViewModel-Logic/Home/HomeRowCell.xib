@@ -29,6 +29,9 @@
                             <constraint firstAttribute="height" constant="1" id="ue0-9V-xvl"/>
                         </constraints>
                     </view>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="uNx-n6-QoX">
+                        <rect key="frame" x="203.5" y="42" width="20" height="20"/>
+                    </activityIndicatorView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNe-Lv-fz9">
                         <rect key="frame" x="65" y="30" width="352" height="44"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -45,10 +48,13 @@
                     <constraint firstAttribute="bottom" secondItem="uNe-Lv-fz9" secondAttribute="bottom" constant="30" id="Wq9-g4-AuS"/>
                     <constraint firstAttribute="bottom" secondItem="okF-bj-AgP" secondAttribute="bottom" id="a6M-IF-440"/>
                     <constraint firstItem="OFV-n4-BBz" firstAttribute="leading" secondItem="SJI-SD-Yqq" secondAttribute="leading" constant="10" id="gBn-K6-ZFL"/>
+                    <constraint firstItem="uNx-n6-QoX" firstAttribute="centerX" secondItem="SJI-SD-Yqq" secondAttribute="centerX" id="hgT-LS-H4r"/>
+                    <constraint firstItem="uNx-n6-QoX" firstAttribute="centerY" secondItem="SJI-SD-Yqq" secondAttribute="centerY" id="tCl-At-4a9"/>
                     <constraint firstItem="uNe-Lv-fz9" firstAttribute="top" secondItem="SJI-SD-Yqq" secondAttribute="top" constant="30" id="zWf-xH-5Zx"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="indicatorView" destination="uNx-n6-QoX" id="jg9-77-Zso"/>
                 <outlet property="leftImage" destination="OFV-n4-BBz" id="MRp-5J-itZ"/>
                 <outlet property="separator" destination="okF-bj-AgP" id="ErK-qA-ZZF"/>
                 <outlet property="title" destination="uNe-Lv-fz9" id="gNV-SB-tZ2"/>
