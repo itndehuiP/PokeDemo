@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
         configureNavBar()
     }
     
-    
     private func configureNavBar() {
         self.title = "Poke List"
         self.navigationController?.setNavigationBar(with: [.logout(#selector(logOut))])

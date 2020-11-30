@@ -27,7 +27,6 @@ class HomeRowCell: UITableViewCell {
         separator.backgroundColor = UIColor.secondary
         indicatorView.tintColor = UIColor.secondary
         indicatorView.hidesWhenStopped = true
-
     }
     
     func load(with pokemon: PokemonBrief?) {

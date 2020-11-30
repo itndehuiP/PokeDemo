@@ -18,6 +18,7 @@ class HomeViewModel {
     var totalCount: Int = 0
     private var pokemonsNoDB = NoDB<PokemonBrief>(name: SystemConstant.pokemonNoDB.rawValue, idKey: "url")
     private var errorFiredDate: Date?
+    private var canShowError = true
     
     weak var delegate: HomeFetchingDelegate?
     private let networkingManager = NetworkingManager()
@@ -28,7 +29,7 @@ class HomeViewModel {
 
     func fetchPokemons(){
         if let items = fetchFromDataBase(), !items.isEmpty {
-            self.append(result: items)
+            self.append(result: items, fromDB: true)
             callFetchCompletion(results: items)
         } else {
             fetchFromServer()
@@ -59,6 +60,20 @@ class HomeViewModel {
     }
     
     private func triggerFetchFailed(error: Error) {
+//MARK: 1
+//        if canShowError {
+//            canShowError = false
+//            self.delegate?.onFetchFailed(with: error.localizedDescription)
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 30) {
+//                self.canShowError = true
+//            }
+//MARK: 2
+//            let timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: false) { (_) in
+//                self.canShowError = true
+//            }
+//            RunLoop.main.add(timer, forMode: RunLoop.Mode.common)
+//        }
+//MARK: 0
         let secondsPassed = -(Date().secondsInterval(from: self.errorFiredDate) ?? -31)
         if secondsPassed > 30 {
             self.errorFiredDate = Date()
@@ -114,13 +129,13 @@ class HomeViewModel {
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
-    private func append(result: [PokemonBrief]?) {
+    private func append(result: [PokemonBrief]?, fromDB: Bool = false) {
         guard let items = result else { return }
         if pokemons == nil {
             pokemons = []
         }
         pokemons?.append(contentsOf: items)
-        if (pokemons?.count ?? 0) < 200 {
+        if (pokemons?.count ?? 0) < 200 && !fromDB {
             saveToDB(new: items)
         }
         offset = pokemons?.count ?? 0
